@@ -1,0 +1,116 @@
+{
+ "template": "n1standard4_std40_action1g1",
+ "world": {
+  "chunkEdgeLengthMeters": "1",
+  "legacyFlags": [
+   {
+    "name": "max_concurrent_workers",
+    "value": "1000"
+   },
+   {
+    "name": "disable_interest_and_authority_update_scheduling",
+    "value": "false"
+   }
+  ],
+  "dimensions": {
+   "xMeters": "2000",
+   "zMeters": "2000"
+  }
+ },
+ "workers": [
+  {
+   "workerType": "UnrealWorker",
+   "permissions": [
+    {
+     "entityCreation": {
+      "allow": true
+     },
+     "entityDeletion": {
+      "allow": true
+     },
+     "entityQuery": {
+      "allow": true,
+      "components": [
+       "*"
+      ]
+     },
+     "systemEntityCommand": {
+      "allow": true
+     }
+    }
+   ]
+  },
+  {
+   "workerType": "UnrealClient",
+   "permissions": [
+    {
+     "entityCreation": {},
+     "entityDeletion": {},
+     "entityQuery": {
+      "allow": true,
+      "components": [
+       "*"
+      ]
+     },
+     "systemEntityCommand": {}
+    }
+   ]
+  },
+  {
+   "workerType": "SimulatedPlayerCoordinator",
+   "permissions": [
+    {
+     "entityCreation": {
+      "allow": true
+     },
+     "entityDeletion": {
+      "allow": true
+     },
+     "entityQuery": {
+      "allow": true,
+      "components": [
+       "*"
+      ]
+     },
+     "systemEntityCommand": {
+      "allow": true
+     }
+    }
+   ]
+  },
+  {
+   "workerType": "DeploymentManager",
+   "permissions": [
+    {
+     "entityCreation": {
+      "allow": true
+     },
+     "entityDeletion": {
+      "allow": true
+     },
+     "entityQuery": {
+      "allow": true,
+      "components": [
+       "*"
+      ]
+     },
+     "systemEntityCommand": {
+      "allow": true
+     }
+    }
+   ]
+  }
+ ],
+ "loadBalancing": {
+  "layerConfigurations": [
+   {
+    "layer": "UnrealWorker",
+    "rectangleGrid": {
+     "cols": 1,
+     "rows": 1
+    },
+    "options": {}
+   }
+  ]
+ }
+}

@@ -1,0 +1,44 @@
+{
+	"runtime_flags": [],
+	"workers": [
+		{
+			"worker_type": "UnrealWorker",
+			"flags": [],
+			"permissions":
+			{
+				"entity_creation": true,
+				"entity_deletion": true,
+				"disconnect_worker": true,
+				"reserve_entity_id": true,
+				"entity_query": true
+			},
+			"load_balancing":
+			{
+				"rectangle_grid":
+				{
+					"cols": 1,
+					"rows": 1
+				},
+				"manual_worker_connection_only": false
+			}
+		},
+		{
+			"worker_type": "UnrealClient",
+			"flags": [],
+			"permissions":
+			{
+				"entity_creation": false,
+				"entity_deletion": false,
+				"disconnect_worker": false,
+				"reserve_entity_id": false,
+				"entity_query": true
+			}
+		}
+	],
+	"world_dimensions":
+	{
+		"x_size": 2000,
+		"z_size": 2000
+	},
+	"max_concurrent_workers": 1000
+}
