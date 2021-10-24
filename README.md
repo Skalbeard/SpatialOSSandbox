@@ -7,6 +7,7 @@ Using UE4 SpatialOS version 4.26
 
 TODO:
 * abstract the network replication into a component
+* convert position replication to RPC
 * put the portal logic into the portal BP
 * consolidate material
 * fix multiplayer player rotation on teleport

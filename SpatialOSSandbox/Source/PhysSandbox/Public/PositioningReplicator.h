@@ -7,7 +7,7 @@
 #include "PositioningReplicator.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class PHYSSANDBOX_API UPositioningReplicator : public UActorComponent
 {
 	GENERATED_BODY()
@@ -24,5 +24,15 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+	UFUNCTION(BlueprintCallable, Category = CustomReplicate)
+		void ReplicateRemoteComponent();
+
+	
+	void ServerSetPosition(FVector newPos);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = CustomReplication)
+		UStaticMeshComponent* ComponentToReplicate;
+
+	UPROPERTY()
+		FVector ServerPosition;
 };
